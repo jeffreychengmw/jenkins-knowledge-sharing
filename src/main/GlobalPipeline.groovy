@@ -1,5 +1,13 @@
 package main
 
+parameters = [
+	repoUrl : true,
+	repoBranch : true,
+	artifactId : true,
+	groupId : true,
+	version : true
+]
+
 def call(body) {
 	
 	def config = [:]
