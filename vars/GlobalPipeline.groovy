@@ -1,5 +1,3 @@
-package main
-
 def call(body) {
 	
 	def config = [:]
