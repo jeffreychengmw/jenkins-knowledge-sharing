@@ -54,11 +54,11 @@ def call(String type, Map map) {
 	                //一些初始化操作
 	                    script {
 	                    //根据param.server分割获取参数
-	                    def split=params.server.split(",")
-	                    serverIP=split[0]
-	                    jettyPort=split[1]
-	                    serverName=split[2]
-	                    serverPasswd=split[3]
+	                    //def split=params.server.split(",")
+	                    //serverIP=split[0]
+	                    //jettyPort=split[1]
+	                    //serverName=split[2]
+	                    //serverPasswd=split[3]
 	                    //场景选择
 	                    println params.scene
 	                    //单元测试运行场景
