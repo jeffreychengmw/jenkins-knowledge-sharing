@@ -47,7 +47,7 @@ def call(String type,Map map) {
 	       }
 	        //pipeline的各个阶段场景
 	        stages {
-	            stage('代码获取') {
+	            stage('retrieve project code') {
 	                steps {
 	                //一些初始化操作
 	                    script {
@@ -89,7 +89,7 @@ def call(String type,Map map) {
 	                 }
 	                }
 	            }
-	            stage('单元测试') {
+	            stage('unit test') {
 	                when {
 	                     expression
 	                        {return isUT }
