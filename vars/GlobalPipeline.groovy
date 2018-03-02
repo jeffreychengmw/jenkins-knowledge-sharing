@@ -43,7 +43,9 @@ def call(String type,Map map) {
 	            buildDiscarder(logRotator(numToKeepStr: '10'))
 	        }
 	       post{
-	
+		   		always {
+					   echo "post always"
+				   }
 	       }
 	        //pipeline的各个阶段场景
 	        stages {
@@ -88,6 +90,12 @@ def call(String type,Map map) {
 	                  git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
 	                 }
 	                }
+	            }
+	            stage('unit test') {
+					steps {
+						//一些初始化操作
+						echo "stage unit test"
+					}
 	            }
 	        }
 	    }
