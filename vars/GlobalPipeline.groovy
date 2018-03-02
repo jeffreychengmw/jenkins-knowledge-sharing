@@ -4,18 +4,18 @@ def call(String type, Map map) {
 	        agent any
 	        //参数化变量,目前只支持[booleanParam, choice, credentials, file, text, password, run, string]这几种参数类型，其他高级参数化类型还需等待社区支持
 	        parameters {
-	        //固定设置三类pipeline场景
-	        choice(name:'scene',choices:"scene1:完整流水线\nscene2:代码检查\nscene3:测试部署", description: '场景选择，默认运行完整流水线，如果只做开发自测可选择代码检查，如果只做环境部署可选择测试部署')
-	        //repoBranch参数后续替换成git parameter不再依赖手工输入,JENKINS-46451
-	        string(name:'repoBranch', defaultValue: "${map.repoBranch}", description: 'git分支名称')
-	        //服务器相关参数采用了组合方式，避免多次选择
-	        choice(name: 'server',choices:"${map.server}", description: '测试服务器列表选择')
-	        string(name:'dubboPort', defaultValue: "${map.dubboPort}", description: '测试服务器的dubbo服务端口')
-	        //单元测试代码覆盖率要求，各项目视要求调整参数
-	        string(name:'lineCoverage', defaultValue: "${map.lineCoverage}", description: '单元测试代码覆盖率要求(%)，小于此值pipeline将会失败！')
-	        //若勾选在pipelie完成后会邮件通知测试人员进行验收
-	        booleanParam(name: 'isCommitQA', defaultValue: false, description: '是否在pipeline完成后，邮件通知测试人员进行人工验收')
-	        }
+		        //固定设置三类pipeline场景
+		        choice(name:'scene',choices:"scene1:完整流水线\nscene2:代码检查\nscene3:测试部署", description: '场景选择，默认运行完整流水线，如果只做开发自测可选择代码检查，如果只做环境部署可选择测试部署')
+		        //repoBranch参数后续替换成git parameter不再依赖手工输入,JENKINS-46451
+		        string(name:'repoBranch', defaultValue: "${map.repoBranch}", description: 'git分支名称')
+		        //服务器相关参数采用了组合方式，避免多次选择
+		        choice(name: 'server',choices:"${map.server}", description: '测试服务器列表选择')
+		        string(name:'dubboPort', defaultValue: "${map.dubboPort}", description: '测试服务器的dubbo服务端口')
+		        //单元测试代码覆盖率要求，各项目视要求调整参数
+		        string(name:'lineCoverage', defaultValue: "${map.lineCoverage}", description: '单元测试代码覆盖率要求(%)，小于此值pipeline将会失败！')
+		        //若勾选在pipelie完成后会邮件通知测试人员进行验收
+		        booleanParam(name: 'isCommitQA', defaultValue: false, description: '是否在pipeline完成后，邮件通知测试人员进行人工验收')
+		        }
 	        //环境变量，初始确定后一般不需更改
 	        tools {
 	            maven "${map.maven}"
@@ -87,7 +87,8 @@ def call(String type, Map map) {
 	                    }
 	                  echo "starting fetchCode from ${REPO_URL}......"
 	                  // Get some code from a GitHub repository
-	                  git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
+	                  //git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
+					  checkout scm
 	                 }
 	                }
 	            }
