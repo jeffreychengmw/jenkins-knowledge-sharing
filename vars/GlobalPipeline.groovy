@@ -11,7 +11,12 @@ def call(body) {
 	
 	}
 	
-	pipeline {
+	parameters {
+		string (name: 'repoUrl', defaultValue: 'project_repoUrl', description: 'Project Repository URL')
+		string (name: 'repoBranch', defaultValue: 'project_repoBranch', description: 'Project Repository Branch')
+	}
+	
+	/*pipeline {
 		agent any
 		
 		parameters {
@@ -40,5 +45,5 @@ def call(body) {
 			sh "echo 'deploying to server ${config.serverDomain}...'"
 		}
 
-	}
+	}*/
 }
