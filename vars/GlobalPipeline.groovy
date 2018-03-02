@@ -1,5 +1,6 @@
 #!groovy
-def call(String type, Map map) {
+/*def call(String type, Map map) {*/
+def call()
     if (type == "maven") {
 	    pipeline {
 	        agent any
