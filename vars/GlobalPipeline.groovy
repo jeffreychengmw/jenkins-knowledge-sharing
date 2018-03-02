@@ -1,3 +1,4 @@
+#!groovy
 def call(String type, Map map) {
     if (type == "maven") {
 	    pipeline {
