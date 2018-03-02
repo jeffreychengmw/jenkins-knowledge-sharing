@@ -1,5 +1,4 @@
-#!groovy
-def call(String type,Map map) {
+def call(String type, Map map) {
     if (type == "maven") {
 	    pipeline {
 	        agent any
@@ -101,9 +100,4 @@ def call(String type,Map map) {
 	        }
 	    }
     }
-	else if (type == "gradle"){
-	   pipeline {
-	        agent any
-	   }
-	}
 }
