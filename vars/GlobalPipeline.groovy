@@ -89,13 +89,6 @@ def call(String type,Map map) {
 	                 }
 	                }
 	            }
-	            stage('unit test') {
-	                when {
-	                     expression
-	                        {return isUT }
-	                }
-	
-	            }
 	        }
 	    }
     }
