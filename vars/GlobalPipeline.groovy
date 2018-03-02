@@ -40,4 +40,5 @@ def call(body) {
 			sh "echo 'deploying to server ${config.serverDomain}...'"
 		}
 
+	}
 }
