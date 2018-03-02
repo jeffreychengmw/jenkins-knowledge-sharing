@@ -11,7 +11,7 @@ def call(body) {
 	
 	}*/
 	
-	pipeline {
+	/*pipeline {
 		agent any
 		
 		parameters {
@@ -40,5 +40,5 @@ def call(body) {
 			sh "echo 'deploying to server ${config.serverDomain}...'"
 		}
 
-	}
+	}*/
 }
