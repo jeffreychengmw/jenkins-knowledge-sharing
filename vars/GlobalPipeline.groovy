@@ -7,7 +7,7 @@ def call(String type, Map map) {
 				string(name:'repoHost', defaultValue: "${map.repoHost}", description: 'repository branch')
 				string(name:'repoPath', defaultValue: "${map.repoPath}", description: 'repository path')
 				string(name:'repoBranch', defaultValue: "${map.repoBranch}", description: 'repository branch')
-				choice(name:'repoConnectionType', choices:"http,https,git,ssh,sftp,ftp,file", selected: 'ssh', description: 'please choose suitable connection type')
+				choice(name:'repoConnectionType', choices:"ssh\nhttp\nhttps\ngit\nsftp\nftp\nfile", selected: 'ssh', description: 'please choose suitable connection type')
 				string(name:'repoConnectionPort', defaultValue: "${map.repoConnectionPort}", description: 'repository connection port')
 				string(name:'repoCredentials', defaultValue: "${map.repoCredentials}", description: 'repository credentials')
 			}
