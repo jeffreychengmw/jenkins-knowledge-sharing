@@ -54,22 +54,22 @@ def call(String type, Map map) {
 					}
 	            }
 				stage('Promote to Production') {
-					steps {
-						//一些初始化操作
+					//steps {
+						
 						echo "Promote to Production Server"
 						timeout(time:45, unit: 'SECONDS') {
 							def userAccessToken = input(
 								id: 'promoteToProductionToken', message: 'Please input password to proceed',
 								parameters: [
-								             [$class: 'TextParameterDefinition', name: 'password']
-								            		 ]
+									[$class: 'TextParameterDefinition', name: 'password']
+								]
 							)
 							//echo (userAccessToken['password'])
 							//echo (userAccessToken)
 							//echo (PASSWORD)
 						}
 						echo "User Access Token: ${userAccessToken}"
-					}
+					//}
 				}
 	        } // end stages
 	        post{
