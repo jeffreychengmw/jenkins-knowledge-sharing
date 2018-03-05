@@ -18,7 +18,7 @@ def call(String type, Map map) {
 	        }
 	        //常量参数，初始确定后一般不需更改
 	        environment{
-	            REPO_URL=${map.repoConnectionType}+'://'+${map.repoHost}:${map.repoConnectionPort}/${map.repoPath}'
+	            REPO_URL=${map.repoConnectionType}+"://"+${map.repoHost}+":"+${map.repoConnectionPort}+"/"+${map.repoPath}
 	        }
 	
 	        options {
