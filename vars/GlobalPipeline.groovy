@@ -20,18 +20,12 @@ def call(String type, Map map) {
 	        environment{
 	            REPO_URL="${map.repoConnectionType}://${map.repoHost}:${map.repoConnectionPort}${map.repoPath}"
 	        }
-	
 	        options {
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
 	            //保持构建的最大个数
 	            buildDiscarder(logRotator(numToKeepStr: '10'))
 	        }
-	       post{
-		   		always {
-					   echo "post always"
-				   }
-	       }
 	        //pipeline的各个阶段场景
 	        stages {
 	            stage('Build Initialization') {
@@ -53,12 +47,29 @@ def call(String type, Map map) {
 						}
 					}
 				}
-	            stage('unit test') {
+	            stage('Unit Test') {
 					steps {
 						//一些初始化操作
 						echo "stage unit test"
 					}
 	            }
+				stage('Promote to Production') {
+					steps {
+						//一些初始化操作
+						echo "Promote to Production Server"
+						timeout( time:1, unit: 'MINUTES') {
+								input(
+									id: 'promoteToProductionPasscode', message: 'Please input passcode to proceed', parameters: [[$class: 'TextParameterDefinition']
+								])
+						}
+						echo "inputted message: ${promoteToProductionPasscode}"
+					}
+				}
+	        } // end stages
+	        post{
+	        	always {
+	        		echo "post always"
+	        	}
 	        }
 	    }
     }
