@@ -61,9 +61,9 @@ def call(String type, Map map) {
 							//echo (userAccessToken)
 							//echo (PASSWORD)
 						}
-						echo "User Access Token 1: ${userAccessToken1}"
+						//echo "User Access Token 1: ${userAccessToken1}"
 						echo "User Access Token 2: ${userAccessToken2}"
-						echo "User Access Token 1 Password: ${userAccessToken1['password']}"
+						//echo "User Access Token 1 Password: ${userAccessToken1['password']}"
 						echo "User Access Token 2 Password: ${userAccessToken2['password']}"
 					}
 				}
