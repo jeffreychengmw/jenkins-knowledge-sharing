@@ -12,9 +12,9 @@ def call(String type, Map map) {
 	            jdk   "${map.jdk}"
 	        }
 	        //常量参数，初始确定后一般不需更改
-	        environment{
+/*	        environment{
 				CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
-			}
+			}*/
 	        options {
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
