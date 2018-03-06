@@ -11,7 +11,7 @@ def deployToProduction() {
 				//echo "Env. Credentials: ${CREDENTIALS}"
 				//"""
 				//echo (PASSWORD)
-	}
+	} 
 }
 def call(String type, Map map) {
     if (type == "maven") {
