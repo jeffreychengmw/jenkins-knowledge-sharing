@@ -3,6 +3,5 @@ def call() {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
 		)
-		echo "userAccessToken: ${userAccessToken}"
 	}
 }
