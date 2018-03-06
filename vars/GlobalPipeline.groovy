@@ -67,7 +67,7 @@ def call(String type, Map map) {
     }
 }
 
-@NonCPS
+
 def deployToProduction() {
 	timeout(time:45, unit: 'SECONDS') {
 		def userAccessToken = input(
