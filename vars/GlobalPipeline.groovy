@@ -76,8 +76,8 @@ def deployToProduction() {
 		//sh """
 										//echo ('User Access Token Password: '+userAccessToken['password'])
 										//echo ('User Access Token: '+userAccessToken)
-			echo (userAccessToken['password'])
-			echo "Env. Credentials: ${CREDENTIALS}"
+			//echo (userAccessToken['password'])
+			//echo "Env. Credentials: ${CREDENTIALS}"
 		//"""
 		//echo (PASSWORD)
 	}
