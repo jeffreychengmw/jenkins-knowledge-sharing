@@ -1,7 +1,4 @@
 def call() { 
-	environment{
-		CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
-	}
 	timeout(time:45, unit: 'SECONDS') {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
@@ -9,7 +6,6 @@ def call() {
 				[$class: 'TextParameterDefinition', name: 'password']
 			]
 		)
-		echo "${CREDENTIALS}"
 		return userAccessToken
 	}
 }
