@@ -62,7 +62,7 @@ def call(String type, Map map) {
 	        	always {
 	        		echo "post always"
 					echo "${CREDENTIALS}"
-					echo "${map.userPassword}"
+					echo "User Password: ${map.userPassword}"
 	        	}
 	        }
 	    }
