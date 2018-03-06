@@ -13,7 +13,7 @@ def call(String type, Map map) {
 	        }
 	        //常量参数，初始确定后一般不需更改
 	        environment{
-				CREDENTIALS = ${map.deployToProductionCredentials}
+				CREDENTIALS = "${map.deployToProductionCredentials}"
 			}
 	        options {
 	            disableConcurrentBuilds()
