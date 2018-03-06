@@ -53,9 +53,9 @@ def call(String type, Map map) {
 						timeout(time:45, unit: 'SECONDS') {
 							input(
 								id: 'userAccessToken', message: 'Please input password to proceed',
-								parameters: [
+								/*parameters: [
 									[$class: 'TextParameterDefinition', name: 'password']
-								]
+								]*/
 							)
 							//echo ('User Access Token Password: '+userAccessToken['password'])
 							//echo ('User Access Token: '+userAccessToken)
