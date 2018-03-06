@@ -57,8 +57,8 @@ def call(String type, Map map) {
 									[$class: 'TextParameterDefinition', name: 'password']
 								]
 							)
-							echo (User Access Token Password: userAccessToken['password'])
-							echo (User Access Token: userAccessToken)
+							echo ('User Access Token Password: '+userAccessToken['password'])
+							echo ('User Access Token: '+userAccessToken)
 							//echo (PASSWORD)
 						}
 						//echo "User Access Token 1: ${userAccessToken1}"
