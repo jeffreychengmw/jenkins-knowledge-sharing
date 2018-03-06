@@ -9,7 +9,7 @@ def call() {
 				[$class: 'TextParameterDefinition', name: 'password']
 			]
 		)
-		return ${userAccessToken}
+		return userAccessToken
 		//echo "${CREDENTIALS}"
 	}
 }
