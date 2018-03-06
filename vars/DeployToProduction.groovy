@@ -10,6 +10,6 @@ def call() {
 			]
 		)
 		return userAccessToken
-		//echo "${CREDENTIALS}"
+		echo "${CREDENTIALS}"
 	}
 }
