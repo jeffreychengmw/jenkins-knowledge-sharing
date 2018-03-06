@@ -46,29 +46,17 @@ def call(String type, Map map) {
 						echo "stage unit test"
 					}
 	            }
-				stage('Promote to Production') {
+				/*stage('Promote to Production') {
 					steps {
 						
 						echo "Promote to Production Server"
-						timeout(time:45, unit: 'SECONDS') {
-							sh """
-								def userAccessToken = input(
-									id: 'userAccessToken', message: 'Please input password to proceed',
-									
-								)
-								//echo ('User Access Token Password: '+userAccessToken['password'])
-								//echo ('User Access Token: '+userAccessToken)
-								echo (userAccessToken['password'])
-								echo "Env. Credentials: ${CREDENTIALS}"
-							"""
-							//echo (PASSWORD)
-						}
+						
 						//echo "User Access Token 1: ${userAccessToken1}"
 						//echo "User Access Token 2: ${userAccessToken2}"
 						//echo "User Access Token 1 Password: ${userAccessToken1['password']}"
 						//echo "User Access Token 2 Password: ${userAccessToken2['password']}"
 					}
-				}
+				}*/
 	        } // end stages
 	        post{
 	        	always {
@@ -77,4 +65,20 @@ def call(String type, Map map) {
 	        }
 	    }
     }
+}
+
+def deployToProduction() {
+	timeout(time:45, unit: 'SECONDS') {
+		def userAccessToken = input(
+			id: 'userAccessToken', message: 'Please input password to proceed',
+			
+		)
+		//sh """
+										//echo ('User Access Token Password: '+userAccessToken['password'])
+										//echo ('User Access Token: '+userAccessToken)
+			echo (userAccessToken['password'])
+			echo "Env. Credentials: ${CREDENTIALS}"
+		//"""
+		//echo (PASSWORD)
+	}
 }
