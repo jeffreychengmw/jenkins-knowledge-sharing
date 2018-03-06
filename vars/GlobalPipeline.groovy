@@ -3,18 +3,18 @@ def call(String type, Map map) {
 	    pipeline {
 	        agent any
 	        //possible parameter types[booleanParam, choice, credentials, file, text, password, run, string]
-	        parameters {
+	        /*parameters {
 				string(name:'repoCredentials', defaultValue: "${map.repoCredentials}", description: 'repository credentials')
-			}
+			}*/
 	        //环境变量，初始确定后一般不需更改
 	        tools {
 	            maven "${map.maven}"
 	            jdk   "${map.jdk}"
 	        }
 	        //常量参数，初始确定后一般不需更改
-/*	        environment{
+	        environment{
 				CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
-			}*/
+			}
 	        options {
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
