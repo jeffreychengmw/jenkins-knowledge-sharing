@@ -13,7 +13,7 @@ def call(String type, Map map) {
 	        }
 	        //常量参数，初始确定后一般不需更改
 	        environment{
-
+				CREDENTIALS = ${map.deployToProductionCredentials}
 			}
 	        options {
 	            disableConcurrentBuilds()
@@ -26,7 +26,7 @@ def call(String type, Map map) {
 	            stage('Build Initialization') {
 	                steps {
 	                //一些初始化操作
-
+						echo "Initilize Project Build Environment......"
 					}
 				}
 				stage('Fetch Codes from Repo') {
@@ -51,12 +51,14 @@ def call(String type, Map map) {
 						
 						echo "Promote to Production Server"
 						timeout(time:45, unit: 'SECONDS') {
-							def userAccessToken = input(
-								id: 'userAccessToken', message: 'Please input password to proceed',
-								parameters: [
-									[$class: 'TextParameterDefinition', name: 'password']
-								]
-							)
+							script {
+								def userAccessToken = input(
+									id: 'userAccessToken', message: 'Please input password to proceed',
+									parameters: [
+										[$class: 'TextParameterDefinition', name: 'password']
+									]
+								)
+							}
 							//echo (userAccessToken['password'])
 							//echo (userAccessToken)
 							//echo (PASSWORD)
