@@ -51,16 +51,16 @@ def call(String type, Map map) {
 						
 						echo "Promote to Production Server"
 						timeout(time:45, unit: 'SECONDS') {
-							input(
-								id: 'userAccessToken', message: 'Please input password to proceed',
-								parameters: [
-									[$class: 'TextParameterDefinition', name: 'password']
-								]
-							)
-							//echo ('User Access Token Password: '+userAccessToken['password'])
-							//echo ('User Access Token: '+userAccessToken)
-							echo (userAccessToken['password'])
 							sh """
+								def userAccessToken = input(
+									id: 'userAccessToken', message: 'Please input password to proceed',
+									parameters: [
+										[$class: 'TextParameterDefinition', name: 'password']
+									]
+								)
+								//echo ('User Access Token Password: '+userAccessToken['password'])
+								//echo ('User Access Token: '+userAccessToken)
+								echo (userAccessToken['password'])
 								echo "Env. Credentials: ${CREDENTIALS}"
 							"""
 							//echo (PASSWORD)
