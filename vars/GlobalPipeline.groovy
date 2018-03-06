@@ -29,7 +29,7 @@ def call(String type, Map map) {
 						echo "Initilize Project Build Environment......"
 					}
 				}
-				stage('Fetch Codes from Repo') {
+				stage('Fetch Codes from Repo') { 
 					steps {
 					//一些初始化操作
 						script {
