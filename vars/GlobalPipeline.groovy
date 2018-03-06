@@ -60,7 +60,6 @@ def call(String type, Map map) {
 							//echo ('User Access Token Password: '+userAccessToken['password'])
 							//echo ('User Access Token: '+userAccessToken)
 							sh """
-								echo "Build Credentials Password: ${BUILD_CREDENTIALS_PASSWORD}"
 								echo "Env. Credentials: ${CREDENTIALS}"
 							"""
 							//echo (PASSWORD)
