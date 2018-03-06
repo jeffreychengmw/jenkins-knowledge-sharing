@@ -52,8 +52,8 @@ def call(String type, Map map) {
 						echo "Promote to Production Server"
 						timeout(time:45, unit: 'SECONDS') {
 							script {
-								def userAccessToken = input(
-									id: 'userAccessToken', message: 'Please input password to proceed',
+								def userAccessToken1 = input(
+									id: 'userAccessToken2', message: 'Please input password to proceed',
 									parameters: [
 										[$class: 'TextParameterDefinition', name: 'password']
 									]
@@ -63,7 +63,10 @@ def call(String type, Map map) {
 							//echo (userAccessToken)
 							//echo (PASSWORD)
 						}
-						echo "User Access Token: ${userAccessToken}"
+						echo "User Access Token 1: ${userAccessToken1}"
+						echo "User Access Token 2: ${userAccessToken2}"
+						echo "User Access Token 1 Password: ${userAccessToken1['password']}"
+						echo "User Access Token 2 Password: ${userAccessToken2['password']}"
 					}
 				}
 	        } // end stages
