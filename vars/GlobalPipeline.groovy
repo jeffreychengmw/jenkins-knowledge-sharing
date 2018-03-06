@@ -54,9 +54,7 @@ def call(String type, Map map) {
 							sh """
 								def userAccessToken = input(
 									id: 'userAccessToken', message: 'Please input password to proceed',
-									parameters: [
-										[$class: 'TextParameterDefinition', name: 'password']
-									]
+									
 								)
 								//echo ('User Access Token Password: '+userAccessToken['password'])
 								//echo ('User Access Token: '+userAccessToken)
