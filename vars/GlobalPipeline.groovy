@@ -13,7 +13,7 @@ def call(String type, Map map) {
 	        }
 	        //常量参数，初始确定后一般不需更改
 	        environment{
-				CREDENTIALS = "${map.deployToProductionCredentials}"
+				CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
 			}
 	        options {
 	            disableConcurrentBuilds()
@@ -53,13 +53,17 @@ def call(String type, Map map) {
 						timeout(time:45, unit: 'SECONDS') {
 							input(
 								id: 'userAccessToken', message: 'Please input password to proceed',
-								/*parameters: [
+								parameters: [
 									[$class: 'TextParameterDefinition', name: 'password']
-								]*/
+								]
 							)
 							//echo ('User Access Token Password: '+userAccessToken['password'])
 							//echo ('User Access Token: '+userAccessToken)
-							echo "${userAccessToken}"
+							sh """
+								echo "User Access Token: ${userAccessToken}"
+								echo "Build Credentials Password: ${BUILD_CREDENTIALS_PASSWORD}"
+								echo "Env. Credentials: ${CREDENTIALS}"
+							"""
 							//echo (PASSWORD)
 						}
 						//echo "User Access Token 1: ${userAccessToken1}"
