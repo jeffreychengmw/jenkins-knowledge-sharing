@@ -3,7 +3,7 @@ def call() {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
 			parameters: [
-				[$class: 'PasswordParameterDefinition', name: 'password']
+				[$class: 'TextParameterDefinition', name: 'password']
 			]
 		)
 		return userAccessToken
