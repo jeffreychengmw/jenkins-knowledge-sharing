@@ -6,7 +6,7 @@ def call() {
 				[$class: 'PasswordParameterDefinition', name: 'password']
 			]
 		)
-		echo >>>>>>>>>>>>>>>>>> userAccessToken
+		echo ''>>>>>>>>>>>>>>>>>>'+ userAccessToken
 		return userAccessToken
 	}
 }
