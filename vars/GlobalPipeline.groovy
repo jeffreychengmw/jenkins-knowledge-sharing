@@ -44,27 +44,16 @@ def call(String type, Map map) {
 					steps {
 						//一些初始化操作
 						echo "stage unit test"
+						sh 'mvn test'
 					}
 	            }
-				/*stage('Promote to Production') {
-					steps {
-						
-						echo "Promote to Production Server"
-						
-						//echo "User Access Token 1: ${userAccessToken1}"
-						//echo "User Access Token 2: ${userAccessToken2}"
-						//echo "User Access Token 1 Password: ${userAccessToken1['password']}"
-						//echo "User Access Token 2 Password: ${userAccessToken2['password']}"
-					}
-				}*/
 	        } // end stages
-	        post{
+/*	        post{
 	        	always {
 	        		echo "post always"
 					echo "${CREDENTIALS}"
-					echo "User Password: ${map.userPassword}"
 	        	}
-	        }
+	        }*/
 	    }
     }
 }
