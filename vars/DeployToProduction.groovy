@@ -1,9 +1,9 @@
 def call() { 
-	timeout(time:45, unit: 'SECONDS') {
+	timeout(time:5, unit: 'MINUTES') {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
 			parameters: [
-				[$class: 'TextParameterDefinition', name: 'password']
+				[$class: 'PasswordParameterDefinition', name: 'password']
 			]
 		)
 		return userAccessToken
