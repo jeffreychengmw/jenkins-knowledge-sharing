@@ -1,9 +1,9 @@
-def call() {
+def call(String result) {
 		stage('CICD') {
 			sh """
 				pwd
-				
 			"""
+			echo "stage CICD >>>>>>>>>>>>>>>>>>>>>>>>"
 		}
 	
 /*	if (result == "SUCCESS") {
