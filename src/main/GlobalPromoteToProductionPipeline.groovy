@@ -1,5 +1,5 @@
 def call() {
-	echo 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '
+	return 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '
 	
 /*	if (result == "SUCCESS") {
 		pipeline {
