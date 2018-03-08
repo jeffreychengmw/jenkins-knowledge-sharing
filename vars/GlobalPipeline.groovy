@@ -27,7 +27,6 @@ def call(String type, Map map) {
 	                steps {
 	                //一些初始化操作
 						echo "Initilize Project Build Environment......"
-						deleteDir()
 					}
 				}
 				stage('Fetch Codes from Repo') { 
