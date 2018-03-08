@@ -16,6 +16,7 @@ def call(String type, Map map) {
 				CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
 			}
 	        options {
+				deleteDir()
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
 	            //保持构建的最大个数
@@ -36,7 +37,7 @@ def call(String type, Map map) {
 							echo "starting fetchCode from Git SCM......"
 							// Get some code from a GitHub repository
 							//git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
-							checkout scm
+							//checkout scm
 						}
 					}
 				}
