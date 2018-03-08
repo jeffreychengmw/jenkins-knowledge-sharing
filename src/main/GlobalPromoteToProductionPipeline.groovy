@@ -1,4 +1,4 @@
-def call(result) {
+def call() {
 	echo 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '+result
 	
 /*	if (result == "SUCCESS") {
