@@ -1,5 +1,5 @@
 def call() {
-	return 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '
+	return 1
 	
 /*	if (result == "SUCCESS") {
 		pipeline {
