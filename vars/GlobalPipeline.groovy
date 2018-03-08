@@ -40,6 +40,19 @@ def call(String type, Map map) {
 						}
 					}
 				}
+				stage('Build Project') {
+					steps {
+					//一些初始化操作
+						script {
+							echo "building project......"
+							// Get some code from a GitHub repository
+							//git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
+							sh """
+								mvn clean package
+							"""
+						}
+					}
+				}
 	            stage('Unit Test') {
 					steps {
 						//一些初始化操作
