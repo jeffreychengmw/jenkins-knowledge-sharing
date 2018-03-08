@@ -1,7 +1,7 @@
 def call(String result) {
 	echo 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '+result
 	
-	if (result == "SUCCESS") {
+/*	if (result == "SUCCESS") {
 		pipeline {
 			stage('CICD') {
 				sh """
@@ -13,5 +13,5 @@ def call(String result) {
 		}
 	} else {
 		echo 'result: >>>>> '+result
-	}
+	}*/
 }
