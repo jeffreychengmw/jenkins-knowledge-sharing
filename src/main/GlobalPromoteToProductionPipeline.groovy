@@ -11,4 +11,5 @@ def call(String result) {
 			}
 		}
 	}
+	return "GlobalPromoteToProductionPipeline"
 }
