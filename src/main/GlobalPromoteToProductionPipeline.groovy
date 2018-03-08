@@ -1,4 +1,5 @@
 def call(String result) {
+	echo 'result is : >>>>>>>>>>>>> '+result
 	pipeline {
 		stages {
 			stage('CICD') {
