@@ -29,17 +29,6 @@ def call(String type, Map map) {
 						echo "Initilize Project Build Environment......"
 					}
 				}
-				stage('Fetch Codes from Repo') { 
-					steps {
-					//一些初始化操作
-						script {
-							echo "starting fetchCode from Git SCM......"
-							// Get some code from a GitHub repository
-							//git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
-							//checkout scm
-						}
-					}
-				}
 				stage('Build Project') {
 					steps {
 					//一些初始化操作
@@ -61,12 +50,6 @@ def call(String type, Map map) {
 					}
 	            }
 	        } // end stages
-/*	        post{
-	        	always {
-	        		echo "post always"
-					echo "${CREDENTIALS}"
-	        	}
-	        }*/
 	    }
     }
 }
