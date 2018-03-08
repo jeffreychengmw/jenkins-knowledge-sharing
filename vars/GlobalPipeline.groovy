@@ -16,7 +16,6 @@ def call(String type, Map map) {
 				CREDENTIALS = credentials('deployToProductionCredentials_hivesplace')
 			}
 	        options {
-				deleteDir()
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
 	            //保持构建的最大个数
@@ -28,6 +27,7 @@ def call(String type, Map map) {
 	                steps {
 	                //一些初始化操作
 						echo "Initilize Project Build Environment......"
+						deleteDir()
 					}
 				}
 				stage('Fetch Codes from Repo') { 
