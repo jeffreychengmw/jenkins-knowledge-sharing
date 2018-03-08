@@ -1,4 +1,4 @@
-def call(String result) {
+def call(result) {
 	echo 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '+result
 	
 /*	if (result == "SUCCESS") {
