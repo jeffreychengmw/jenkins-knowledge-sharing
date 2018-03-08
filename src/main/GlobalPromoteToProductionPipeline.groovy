@@ -1,11 +1,9 @@
 def call() {
-	pipeline {
-			stage('CICD') {
-				sh """
-					pwd
-					
-				"""
-			}
+		stage('CICD') {
+			sh """
+				pwd
+				
+			"""
 		}
 	
 /*	if (result == "SUCCESS") {
