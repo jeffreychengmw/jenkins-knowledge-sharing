@@ -10,6 +10,6 @@ def call(String result) {
 			}
 		}
 	} else {
-		echo result
+		echo 'result: >>>>> '+result
 	}
 }
