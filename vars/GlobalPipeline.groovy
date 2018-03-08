@@ -36,9 +36,9 @@ def call(String type, Map map) {
 							echo "building project......"
 							// Get some code from a GitHub repository
 							//git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
-							sh """
-								mvn clean package
-							"""
+							//sh """
+							//	mvn clean package
+							//"""
 						}
 					}
 				}
@@ -46,7 +46,7 @@ def call(String type, Map map) {
 					steps {
 						//一些初始化操作
 						echo "stage unit test"
-						sh 'mvn test'
+						//sh 'mvn test'
 					}
 	            }
 	        } // end stages
