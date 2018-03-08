@@ -1,4 +1,6 @@
 def call(String result) {
+	echo 'GlobalPromoteToProductionPipeline>>>>>>>>>>> '+result
+	
 	if (result == "SUCCESS") {
 		pipeline {
 			stage('CICD') {
