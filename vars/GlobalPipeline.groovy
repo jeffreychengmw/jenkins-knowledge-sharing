@@ -20,6 +20,7 @@ def call(String type, Map map) {
 	            timeout(time: 10, unit: 'MINUTES')
 	            //保持构建的最大个数
 	            buildDiscarder(logRotator(numToKeepStr: '10'))
+				skipDefaultCheckout()
 	        }
 	        //pipeline的各个阶段场景
 	        stages {
