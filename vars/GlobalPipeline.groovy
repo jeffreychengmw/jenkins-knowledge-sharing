@@ -6,7 +6,7 @@ def call(String type, Map map) {
 	        /*parameters {
 				string(name:'repoCredentials', defaultValue: "${map.repoCredentials}", description: 'repository credentials')
 			}*/
-	        //环境变量，初始确定后一般不需更改
+	        // environment variables, settings as per Jenkins configuration
 	        tools {
 	            maven "${map.maven}"
 	            jdk   "${map.jdk}"
@@ -23,7 +23,7 @@ def call(String type, Map map) {
 				// prevent double source checkout
 				skipDefaultCheckout()
 	        }
-	        //pipeline的各个阶段场景
+	        //pipeline stages
 	        stages {
 	            stage('Build Initialization') {
 	                steps {
@@ -34,8 +34,6 @@ def call(String type, Map map) {
 					steps {
 						script {
 							echo "building project......"
-							// Get some code from a GitHub repository
-							//git credentialsId:CRED_ID, url:REPO_URL, branch:params.repoBranch
 							sh """
 								mvn clean package
 							"""
