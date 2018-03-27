@@ -18,21 +18,20 @@ def call(String type, Map map) {
 	        options {
 	            disableConcurrentBuilds()
 	            timeout(time: 10, unit: 'MINUTES')
-	            //保持构建的最大个数
+	            //maximum build history. discard old builds if exceeded
 	            buildDiscarder(logRotator(numToKeepStr: '10'))
+				// prevent double source checkout
 				skipDefaultCheckout()
 	        }
 	        //pipeline的各个阶段场景
 	        stages {
 	            stage('Build Initialization') {
 	                steps {
-	                //一些初始化操作
 						echo "Initilize Project Build Environment......"
 					}
 				}
 				stage('Build Project') {
 					steps {
-					//一些初始化操作
 						script {
 							echo "building project......"
 							// Get some code from a GitHub repository
@@ -45,7 +44,6 @@ def call(String type, Map map) {
 				}
 	            stage('Unit Test') {
 					steps {
-						//一些初始化操作
 						echo "stage unit test"
 						sh 'mvn test'
 					}

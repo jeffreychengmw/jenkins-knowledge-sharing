@@ -3,6 +3,7 @@ def call() {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
 			parameters: [
+				// need to install 'Mask Password' plugin to use the class
 				[$class: 'com.michelin.cio.hudson.plugins.passwordparam.PasswordParameterDefinition', name: 'password']
 			]
 		)
