@@ -3,7 +3,7 @@ def call() {
 		def userAccessToken = input(
 			id: 'userAccessToken', message: 'Please input password to proceed',
 			parameters: [
-				[$class: 'PasswordParameterDefinition', name: 'password']
+				[$class: 'com.michelin.cio.hudson.plugins.passwordparam.PasswordParameterDefinition', name: 'password']
 			]
 		)
 		return userAccessToken
